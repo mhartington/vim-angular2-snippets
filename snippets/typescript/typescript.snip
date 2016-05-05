@@ -1,0 +1,89 @@
+snippet ng2-component
+  import { Component, OnInit } from '@angular/core';
+
+  @Component({
+    moduleId: module.id,
+    selector: '${1:#:selector}',
+    templateUrl: '${2:#:name}.component.html'
+  })
+  export class ${1:#:ComponentName}Component implements OnInit {
+    constructor() { }
+
+    ngOnInit() { }
+    ${0}
+  }
+
+snippet ng2-service
+  import { Injectable } from '@angular/core';
+
+  @Injectable()
+  export class ${1:#:ServiceName}Service {
+    ${0}
+    constructor() { }
+
+  }
+
+snippet ng2-pipe
+  import { Pipe, PipeTransform } from '@angular/core';
+
+  @Pipe({
+    name: '${name}'
+  })
+
+  export class ${1:#:PipeName}Pipe implements PipeTransform {
+    transform(value: any, args: any[]): any {
+      ${0}
+    }
+  }
+
+snippet ng2-routes
+  @Routes([
+    { path: '/${1:#:path}', component: ${2:#:Component} }${0}
+  ])
+
+snippet ng2-route-path
+  { path: '/${1:#:path}', component: ${2:#:Component} }${0}
+
+
+snippet ng2-http-get
+  return this.http.get('${1:#:url}')
+  .map((res: Response) => res.json()${0});
+
+snippet ng2-subscribe
+  this.${1:#:service}.${2:#:function}
+  .subscribe(${3:#:arg} => this.${4:#:property} = ${5:#:arg});
+  ${0}
+
+snippet ng2-bootstrap
+  import { enableProdMode } from '@angular/core';
+  import { bootstrap } from '@angular/platform-browser-dynamic';
+
+  import { ${1:#:AppComponent} } from './${2:#:name}.component';
+
+  // enableProdMode();
+
+  bootstrap(${3:#:AppComponent})
+    .then(success => console.log('Bootstrap success'))
+    .catch(error => console.log(error));
+  ${0}
+
+snippet ng2-component-root
+  import { Component } from '@angular/core';
+  import { HTTP_PROVIDERS } from '@angular/http';
+  import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
+  import 'rxjs/Rx'; // load the full rxjs
+
+  @Component({
+    moduleId: module.id,
+    selector: '${1:#:selector}',
+    templateUrl: '${2:#:name}.component.html',
+    directives: [ROUTER_DIRECTIVES],
+    providers: [
+      HTTP_PROVIDERS,
+      ROUTER_PROVIDERS
+    ]
+  })
+  @Routes([
+    ${0}
+  ])
+  export class AppComponent {}

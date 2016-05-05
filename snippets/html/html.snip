@@ -1,0 +1,43 @@
+snippet ng2-ngClass
+  [ngClass]="{${1:#:cssClass}: ${2:#:expression}}"
+
+
+
+
+snippet ng2-ngFor
+  *ngFor="let ${1:#:item} of ${2:#:list}"
+
+
+
+
+snippet ng2-ngIf
+  *ngIf="${1:#:expression}""
+
+
+
+
+snippet ng2-ngModel
+  [(ngModel)]="${1:#:binding}""
+
+
+
+
+snippet ng2-routerLink
+  [routerLink]="['${1:#:routeName}']""
+
+
+
+
+snippet ng2-ngStyle
+  [ngStyle]="{${1:#:style}: ${2:#:expression}}""
+
+
+
+
+snippet ng2-ngSwitch
+  <div [ngSwitch]="${1:#:conditionExpression}">
+    <div *ngSwitchWhen="${2:#:expression}"></div>
+    <div *ngSwitchDefault>${3:#:output2}</div>
+  </div>
+
+
