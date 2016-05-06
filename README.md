@@ -29,7 +29,25 @@ ng2-ngSwitch
 
 ### Installation
 
-Use what ever plugin manager you like.
+####[vundle](https://github.com/gmarik/vundle)
+
+    Plugin 'mhartington/vim-angular2-snippets'
+
+to `.vimrc`, and then run `:PluginInstall`.
+
+####[pathogen.vim](https://github.com/tpope/vim-pathogen)
+
+    cd ~/.vim/bundle
+    git clone https://github.com/mhartington/vim-angular2-snippets.git
+
+Then reload vim, run `:Helptags`
+
+####[apt-vim](https://github.com/egalpin/apt-vim)
+
+    apt-vim install -y https://github.com/mhartington/vim-angular2-snippets.git
+
+For those who need it, a tarball is available from
+[here](https://github.com/mhartington/vim-angular2-snippets/archive/master.zip).
 
 ### Note
 
